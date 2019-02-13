@@ -113,53 +113,6 @@ Function Remove-EmailUsingProofPointList
 	}
 }
 
-<# 
-New Function - MailboxInfo from List
-
-
-$masterList = gc "C:\temp\5Rivers-Round1.txt"
-
-foreach ($5rmbx in $masterlist) { 
-    Try { $mbxstatTotal = get-mailboxstatistics $5rmbx -EA Stop | %{$_.TotalItemSize.Value.ToMB()} }
-        Catch { $mbxstatTotal = "DNE-Error" }
-    Try { $mbxstatDeleted = get-mailboxstatistics $5rmbx -EA Stop | %{$_.TotalDeletedItemSize.Value.ToMB()} }
-        Catch { $mbxstatDeleted = "DNE-Error" }
-    $value = $5rmbx+", "+$mbxstatTotal+",",$mbxstatDeleted
-    $value >> C:\Temp\TestList.csv
-}
-
-
-}
-
-#>
-
-
-function Get-MBXSize {
-    [CmdletBinding()]
-    param (
-        [string]$ImportFileName = $null
-    )
-    
-    begin {
-        # No export file specified
-        if ($ExportFile -eq $null) { 
-            
-        }
-    }
-    
-    process {
-        if ($ImportFileName -ne $null)  {
-
-
-        }
-    
-    
-    
-    }
-    
-    end {
-    }
-}
 
 function Fix-IMCEAEX-NDR {
     <#
